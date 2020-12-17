@@ -13,6 +13,8 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -37,8 +39,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Nombre del Alumno:" + alumno.getNombre(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
+
+
+
+    }
+
+    public void enviarDatos(View view) {
+        EditText edtText = (EditText) findViewById(R.id.nombre);
+        String nombre = edtText.getText().toString();
+
+        Toast.makeText(getBaseContext(),"Tu nombre es: " + nombre, Toast.LENGTH_LONG).show();
     }
 
     @Override
